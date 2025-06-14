@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Love, Atiya 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5rem;
+      color: #ff1493;
+      text-shadow: 0 0 20px #ff69b4;
+      margin-top: 40px;
+    }
+
+    .typing, #since {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 20px auto;
+      color: #fff0f5;
+      text-shadow: 0 0 10px #ff69b4;
+      min-height: 60px;
+    }
+
+    #since strong {
+      color: #ffb6c1;
+      text-shadow: 0 0 8px #ff69b4;
+    }
+
+    .glow-love {
+      font-size: 2.2rem;
+      color: #fff;
+      text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff1493;
+      animation: pulse 2s infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes pulse {
+      0% { text-shadow: 0 0 10px #ff69b4; }
+      50% { text-shadow: 0 0 30px #ff1493; }
+      100% { text-shadow: 0 0 10px #ff69b4; }
+    }
+
+    .heart-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 30px auto;
+      gap: 20px;
+      padding: 0 10px;
+    }
+
+    .heart-frame {
+      position: relative;
+      width: 90px;
+      height: 90px;
+      background: pink;
+      clip-path: path("M 45 15 C 45 0 0 0 0 30 C 0 60 45 90 45 90 C 45 90 90 60 90 30 C 90 0 45 0 45 15 Z");
+      box-shadow: 0 0 10px #ff69b4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .heart-frame img {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid white;
+    }
+
+    .footer {
+      margin: 40px 0 20px;
+      font-size: 0.95rem;
+      color: #fff;
+      text-shadow: 0 0 4px #ff69b4;
+    }
+
+    .love-btn {
+      margin-top: 20px;
+      padding: 12px 30px;
+      font-size: 1.2rem;
+      background: #ff1493;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 0 15px #ff69b4;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .love-btn:hover {
+      background: #ff69b4;
+    }
+
+    .heart-particle {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: #ff1493;
+      transform: rotate(45deg);
+      animation: explode 1s ease-out forwards;
+      opacity: 0.8;
+    }
+
+    .heart-particle::before,
+    .heart-particle::after {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: #ff1493;
+      border-radius: 50%;
+    }
+
+    .heart-particle::before {
+      top: -7.5px;
+      left: 0;
+    }
+
+    .heart-particle::after {
+      left: -7.5px;
+      top: 0;
+    }
+
+    @keyframes explode {
+      0% { transform: scale(1) translate(0, 0) rotate(45deg); opacity: 1; }
+      100% { transform: scale(1.5) translate(var(--x), var(--y)) rotate(45deg); opacity: 0; }
+    }
+
+    /* Heart rain animation */
+    .falling-heart {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/4/4f/Red_heart.svg');
+      background-size: cover;
+      animation: fall 5s linear infinite;
+      opacity: 0.6;
+      z-index: 999;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-100px) rotate(0); }
+      100% { transform: translateY(110vh) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Love, Atiya 💘</h1>
+  <div class="glow-love">I LOVE YOU ❤️</div>
+  <div class="typing" id="typing-text"></div>
+  <div id="since" class="typing"></div>
+
+  <button class="love-btn" onclick="heartExplosion(event)">💖 Click Me, My Love 💖</button>
+
+  <div class="heart-gallery">
+    <div class="heart-frame"><img src="atiya1.jpg" alt="Atiya"></div>
+    <div class="heart-frame"><img src="atiya2.jpg" alt="Atiya"></div>
+    <div class="heart-frame"><img src="atiya3.jpg" alt="Atiya"></div>
+    <div class="heart-frame"><img src="atiya4.jpg" alt="Atiya"></div>
+    <div class="heart-frame"><img src="atiya5.jpg" alt="Atiya"></div>
+    <div class="heart-frame"><img src="atiya6.jpg" alt="Atiya"></div>
+    <div class="heart-frame"><img src="atiya7.jpg" alt="Atiya"></div>
+    <div class="heart-frame"><img src="atiya8.jpg" alt="Atiya"></div>
+    <div class="heart-frame"><img src="atiya9.jpg" alt="Atiya"></div>
+    <div class="heart-frame"><img src="atiya10.jpg" alt="Atiya"></div>
+  </div>
+
+  <div class="footer">Forever Yours, Shafraaz 🌙</div>
+
+  <!-- Romantic Music -->
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2023/03/09/audio_408b8455ff.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Typing effect -->
+  <script>
+    const message = "Atiya, you are my light, my heart, and my eternal joy. I love you more than words can ever say 💖";
+    const typingText = document.getElementById("typing-text");
+    let i = 0;
+    function typeEffect() {
+      if (i < message.length) {
+        typingText.innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeEffect, 50);
+      }
+    }
+    typeEffect();
+  </script>
+
+  <!-- Heart Explosion -->
+  <script>
+    function heartExplosion(event) {
+      const count = 25;
+      for (let i = 0; i < count; i++) {
+        const heart = document.createElement("div");
+        heart.className = "heart-particle";
+        const x = (Math.random() - 0.5) * 200;
+        const y = (Math.random() - 0.5) * 200;
+        heart.style.left = `${event.clientX}px`;
+        heart.style.top = `${event.clientY}px`;
+        heart.style.setProperty("--x", `${x}px`);
+        heart.style.setProperty("--y", `${y}px`);
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 1000);
+      }
+    }
+  </script>
+
+  <!-- Countdown since 29 Nov 2024 -->
+  <script>
+    function updateLoveDuration() {
+      const sinceDate = new Date("2024-11-29T00:00:00");
+      const now = new Date();
+      const diff = now - sinceDate;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("since").innerHTML =
+        `💞 It's been <strong>${days}</strong> days, <strong>${hours}</strong> hours, <strong>${minutes}</strong> minutes, and <strong>${seconds}</strong> seconds since I met you, my love.`;
+    }
+    setInterval(updateLoveDuration, 1000);
+    updateLoveDuration();
+  </script>
+
+  <!-- Floating Heart Rain -->
+  <script>
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "falling-heart";
+      heart.style.left = `${Math.random() * 100}vw`;
+      heart.style.animationDuration = `${Math.random() * 3 + 2}s`;
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }, 300);
+  </script>
+
+  <!-- Monthly Anniversary Popup -->
+  <script>
+    const today = new Date();
+    if (today.getDate() === 29) {
+      alert("🎉 Happy Monthly Anniversary, Shafraaz & Atiya! 💑");
+    }
+  </script>
+
+</body>
+</html>
