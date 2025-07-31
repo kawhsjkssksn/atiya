@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HOME</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --main-color: #ff4081;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      background: linear-gradient(315deg, #2c5364, #203a43, #0f2027);
+      background-size: 400% 400%;
+      animation: gradientShift 18s ease infinite;
+      text-align: center;
+      padding-bottom: 80px;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .header-title {
+      font-size: 3.5rem;
+      margin: 20px 0 10px;
+      font-weight: 700;
+      animation: float 3s ease-in-out infinite alternate;
+      text-shadow: 0 0 20px var(--main-color), 0 0 30px #0ff, 0 0 40px var(--main-color);
+      z-index: 2;
+      position: relative;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+
+    .navbar {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 14px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      font-size: 1.1rem;
+      margin: 0 auto 30px;
+      width: 100%;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #ffd6f6;
+    }
+
+    .theme-panel {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: rgba(0,0,0,0.4);
+      padding: 10px 15px;
+      border-radius: 12px;
+      z-index: 9999;
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .theme-icon {
+      width: 26px;
+      height: 26px;
+      cursor: pointer;
+      fill: var(--main-color);
+      transition: fill 0.3s;
+    }
+
+    .theme-colors {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .color-btn {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid white;
+      cursor: pointer;
+    }
+
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .slide-image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      animation: fadeSlide 12s infinite;
+      left: 0;
+      top: 0;
+    }
+
+    .slide-image:nth-child(2) { animation-delay: 4s; }
+    .slide-image:nth-child(3) { animation-delay: 8s; }
+
+    @keyframes fadeSlide {
+      0% { opacity: 0; }
+      8% { opacity: 1; }
+      30% { opacity: 1; }
+      38% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    .profile-section {
+      position: relative;
+      z-index: 2;
+      margin-top: -140px;
+      margin-bottom: 20px;
+    }
+
+    .profile-pic {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 4px solid white;
+      object-fit: cover;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+      animation: pulse 4s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .animated-name {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.2rem;
+      font-weight: 400;
+      margin-top: 12px;
+      animation: textGlow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes textGlow {
+      from { text-shadow: 0 0 5px white, 0 0 10px var(--main-color), 0 0 20px red; }
+      to { text-shadow: 0 0 10px white, 0 0 20px var(--main-color), 0 0 30px red; }
+    }
+
+    .bio-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 20px;
+      line-height: 1.8;
+      font-size: 1.1rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    #backToTop {
+      display: inline-block;
+      margin: 30px auto;
+      text-decoration: underline;
+      color: white;
+      z-index: 2;
+      position: relative;
+    }
+
+    #voiceAssistantBtn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background: var(--main-color);
+      color: white;
+      cursor: pointer;
+      z-index: 2;
+      position: relative;
+      box-shadow: 0 0 10px var(--main-color), 0 0 20px var(--main-color);
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      text-align: center;
+      padding: 12px;
+      font-size: 0.9rem;
+      z-index: 999;
+      backdrop-filter: blur(6px);
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <!-- Theme and Color Panel -->
+  <div class="theme-panel">
+    <svg class="theme-icon" viewBox="0 0 24 24"><path d="M12 0a12 12 0 100 24A12 12 0 0012 0zm1 19h-2v-2h2v2zm0-4h-2V5h2v10z"/></svg>
+    <div class="theme-colors">
+      <div class="color-btn" style="background:#ff4081" onclick="setTheme('#ff4081')"></div>
+      <div class="color-btn" style="background:#00e5ff" onclick="setTheme('#00e5ff')"></div>
+      <div class="color-btn" style="background:#ffea00" onclick="setTheme('#ffea00')"></div>
+      <div class="color-btn" style="background:#00ff95" onclick="setTheme('#00ff95')"></div>
+      <div class="color-btn" style="background:#9c27b0" onclick="setTheme('#9c27b0')"></div>
+      <div class="color-btn" style="background:#03a9f4" onclick="setTheme('#03a9f4')"></div>
+      <div class="color-btn" style="background:#ff5722" onclick="setTheme('#ff5722')"></div>
+      <div class="color-btn" style="background:#4caf50" onclick="setTheme('#4caf50')"></div>
+    </div>
+    <input type="color" id="bgColorPicker" value="#0f2027">
+  </div>
+
+  <h1 class="header-title">HOME PAGE</h1>
+
+  <nav class="navbar">
+    <a href="home.html">HOME</a>
+    <a href="about.html">ABOUT ME</a>
+    <a href="project.html">PROJECTS</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+
+  <div class="slideshow-container">
+    <img class="slide-image" src="NO 1.jpg" alt="Slide 1" />
+    <img class="slide-image" src="NO 2.jpg" alt="Slide 2" />
+  </div>
+
+  <div class="profile-section">
+    <img src="zzz.jpg" alt="shafraaz picture" class="profile-pic" />
+    <div class="animated-name">mohammed shafraaz</div>
+  </div>
+
+  <div class="bio-section">
+    <h3>Assalamualaikum 🌸</h3>
+    <p>Welcome to my digital portfolio. I'm thrilled to have you here. Explore my work, learn about me, and feel free to get in touch!</p>
+    <p>I focus on delivering clean, thoughtful, and effective work. This portfolio is a collection of projects I’ve worked on — feel free to look around and reach out if you'd like to connect.</p>
+    <button id="voiceAssistantBtn" onclick="alert('Voice assistant activated!')">🎙️ Talk to AI Assistant</button>
+  </div>
+
+  <a href="#" id="backToTop">Back to Top</a>
+
+  <footer>
+    &copy; 2025 Mohammed shafraaz. All rights reserved. | Designed with 🌸 and love.
+  </footer>
+
+  <script>
+    particlesJS.load('particles-js', 'https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js@master/demo/particles.json');
+
+    const bgPicker = document.getElementById('bgColorPicker');
+    bgPicker.addEventListener('input', (e) => {
+      document.body.style.background = e.target.value;
+      document.body.style.animation = 'none';
+    });
+
+    function setTheme(color) {
+      document.documentElement.style.setProperty('--main-color', color);
+    }
+  </script>
+</body>
+</html>
